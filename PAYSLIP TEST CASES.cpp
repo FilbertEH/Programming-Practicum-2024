@@ -32,7 +32,7 @@ void testCases(){
     "Carlot Ahint Danish",
     "Muhammad Sigma Reat",
     "Tomat Nanda Arwijaya",
-    "Rian  Halim"};
+    "Rian Daf Halim"};
     long int Data[4][3] = {
     {30000000, 2000000, 500000},
     {15000000, 1000000, 100000},
