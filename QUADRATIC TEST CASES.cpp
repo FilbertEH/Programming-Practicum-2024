@@ -9,38 +9,32 @@ double processing(double a, double b, double c){
     if (discriminant > 0){
         double x1 = (-b + sqrt(discriminant)) / (2 * a);
         double x2 = (-b - sqrt(discriminant)) / (2 * a);
-        cout << "There are two distinct real roots, x1 = " << x1 << " and x2 = " << x2 << endl;
+        cout << "As the discriminant is greater than zero,\nThere are two distinct real roots, x1 = " 
+        << x1 << " and x2 = " << x2 << endl;
     }
     else if (discriminant == 0){
         double x = -b / (2 * a);
-        cout << "There is exactly one real root, x = " << x << endl;
+        cout << "As the discriminant is equal to zero,\nThere is exactly one real root, x = " << x << endl;
     }
     else{
-        cout << "There are no real roots (the roots are complex)." << endl;
+        cout << "As the discriminant is less than zero,\nThere are no real roots (the roots are complex)." << endl;
     }
     return 0;
 }
 
 void testCases(){
-    cout << "IF DISCRIMINANT (∆) > 0\n"
-    << "------- CASE 1 --------\n";
-    processing(1, -5, 6);
-    cout << "------- CASE 2 --------\n";
-    processing (1, -7, 10);
-
-    cout << "---------------------------------\n"
-    << "IF DISCRIMINANT (∆) = 0\n"
-    << "------- CASE 1 --------\n";
-    processing(1, -4, 4);
-    cout << "------- CASE 2 --------\n";
-    processing (1, -6, 9);
-
-    cout << "---------------------------------\n"
-    << "IF DISCRIMINANT (∆) < 0\n"
-    << "------- CASE 1 --------\n";
-    processing(1, 2, 7);
-    cout << "------- CASE 2 --------\n";
-    processing (1, 5, 13);
+    double test[6][3] = {
+    {1, -5, 6},
+    {1, -7, 10},
+    {1, -4, 4},
+    {1, -6, 9},
+    {1, 2, 7},
+    {1, 5, 13},
+    };
+    for (int i = 0, j = 0; i < 6; i++) {
+        cout << "----------- Case " << i+1 << " -----------\n";
+        processing(test[i][j], test[i][j+1], test[i][j+2]);
+        }
 }
 
 int main(){
