@@ -9,8 +9,7 @@ double getInput(string prompt){
     return value;
 }
 
-int main(){
-    cout << "Solving a Quadratic Equation (ax^2 + bx + c = 0)" << endl << "Input Values for: " << endl;
+int task(){
     double a = getInput("[a]: ");
     double b = getInput("[b]: ");
     double c = getInput("[c]: ");
@@ -26,8 +25,18 @@ int main(){
         cout << "There is exactly one real root, " << x << endl;
     }
     else{
-        cout << "There are no real roots (the roots are complex)." << endl;
+        cout << "There are no real roots (the roots are complex).\n";
     }
     return 0;
 }
 
+int main(){
+    char again = 'y';
+    cout << "Solving a Quadratic Equation [ax^2 + bx + c = 0]\n" << "Input Values for:\n";
+    do{
+        task();
+        cout << "\nWould you like to start again [y/n]: ";
+        cin >> again;
+    }while (again == 'y');
+    return 0;
+}
