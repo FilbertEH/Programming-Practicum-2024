@@ -19,7 +19,7 @@ double processing(double a, double b, double c){
         cout << "As the discriminant is equal to zero,\nThere is exactly one real root, x = " << x << endl;
     }
     else{
-        cout << "As the discriminant is less than zero,\nThere are no real roots (the roots are complex)\n.";
+        cout << "As the discriminant is less than zero,\nThere are no real roots (the roots are complex).\n";
     }
     return 0;
 }
@@ -36,9 +36,9 @@ void testCases(){
     {1, 5, 13},
     };
     // for loop to call processing function
-    for (int i = 0, j = 0; i < 6; i++) {
+    for (int i = 0; i < 6; i++) {
         cout << "----------- Case " << i+1 << " -----------\n";
-        processing(test[i][j], test[i][j+1], test[i][j+2]);
+        processing(test[i][0], test[i][1], test[i][2]);
         }
 }
 
