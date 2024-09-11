@@ -15,7 +15,7 @@ int task(){
     double b = getInput("[b]: ");
     double c = getInput("[c]: ");
     int largest = max({a, b, c});
-    cout << "The largest number is:" << largest << endl;
+    cout << "The largest number is: " << largest << endl;
     double discriminant = pow(b, 2) - ( 4 * a * c);
     cout << "Discriminant (∆) = " << discriminant << endl;
     if (discriminant > 0){
