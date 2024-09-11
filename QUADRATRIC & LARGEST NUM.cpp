@@ -1,5 +1,4 @@
 #include <cmath>
-#include <algorithm>
 #include <iostream>
 using namespace std;
 
@@ -14,8 +13,14 @@ int task(){
     double a = getInput("[a]: ");
     double b = getInput("[b]: ");
     double c = getInput("[c]: ");
-    int largest = max({a, b, c});
-    cout << "The largest number is: " << largest << endl;
+    int large = a;
+    if (large < b){
+        large = b;
+    }
+    if (large < c){
+        large = c;
+    }
+    cout << "the largest number is: " << large << endl;
     double discriminant = pow(b, 2) - ( 4 * a * c);
     cout << "Discriminant (∆) = " << discriminant << endl;
     if (discriminant > 0){
