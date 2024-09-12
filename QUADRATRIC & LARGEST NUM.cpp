@@ -9,42 +9,22 @@ double getInput(string prompt){
     return value;
 }
 
-int task(){
-    double a = getInput("[a]: ");
-    double b = getInput("[b]: ");
-    double c = getInput("[c]: ");
-    int large = a;
-    if (large < b){
-        large = b;
-    }
-    if (large < c){
-        large = c;
-    }
-    cout << "the largest number is: " << large << endl;
-    double discriminant = pow(b, 2) - ( 4 * a * c);
-    cout << "Discriminant (∆) = " << discriminant << endl;
-    if (discriminant > 0){
-        double x1 = (-b + sqrt(discriminant)) / (2 * a);
-        double x2 = (-b - sqrt(discriminant)) / (2 * a);
-        cout << "There are two distinct real roots, x1 = " << x1 << " and x2 = " << x2 << endl;
-    }
-    else if (discriminant == 0){
-        double x = -b / (2 * a);
-        cout << "There is exactly one real root (the two roots are equal), x = " << x << endl;
-    }
-    else{
-        cout << "There are no real roots (the roots are imaginary).\n";
-    }
-    return 0;
-}
-
 int main(){
     char again = 'y';
-    cout << "Solving a Quadratic Equation [ax^2 + bx + c = 0]\n" 
-    << "Input Values for:\n";
+    cout << "Finding the largest number between three numbers:\n";
     do{
-        task();
-        cout << "\nWould you like to start again [y/n]: ";
+        double a = getInput("Input number 1: ");
+        double b = getInput("Input number 2: ");
+        double c = getInput("Input number 3: ");
+        int large = a;
+        if (large < b){
+            large = b;
+        }
+        if (large < c){
+            large = c;
+        }
+        cout << "The largest number is: " << large << endl;
+        cout << "\nTry again? [y/n]: ";
         cin >> again;
     }while (again == 'y');
     return 0;
