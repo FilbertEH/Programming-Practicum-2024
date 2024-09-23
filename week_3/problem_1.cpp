@@ -14,7 +14,7 @@ int task(){
     double b = getInput("[b]: ");
     double c = getInput("[c]: ");
     double discriminant = pow(b, 2) - ( 4 * a * c);
-    cout << "Discriminant (∆) = " << discriminant << endl;
+    cout << "Discriminant = " << discriminant << endl;
     if (discriminant > 0){
         double x1 = (-b + sqrt(discriminant)) / (2 * a);
         double x2 = (-b - sqrt(discriminant)) / (2 * a);
