@@ -4,3 +4,7 @@ Input: 100
 Output: 5050
 Input: 973
 Output: 473851
+Input: 18
+Output: 171
+Input: 73
+Output: 2701
