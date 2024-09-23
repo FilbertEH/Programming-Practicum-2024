@@ -6,15 +6,14 @@
 std::string task(double a, double b, double c){
     double x1, x2;
     double discriminant = pow(b, 2) - (4 * a * c);
-    std::string x;
+    std::string x = "";
     if (discriminant > 0){ 
         x1 = (-b + std::sqrt(discriminant)) / (2 * a);
         x2 = (-b - std::sqrt(discriminant)) / (2 * a);
-        x += std::to_string(x1) + ", " + std::to_string(x2);
+        x = std::to_string(x1) + ", " + std::to_string(x2);
     }
     else if (discriminant == 0){
-        x1 = -b / (2 * a);
-        x = std::to_string(x1);
+        x = std::to_string(-b / (2 * a));
     }
     else{
         x = "complex";
@@ -35,17 +34,18 @@ int main(){
     int i = 1;
     while (getline(testFile, line)) {
         double a, b, c;
-        std::string discriminant, expected_output;
-        getline(testFile, line);  
-        a = stod(line.substr(4));
-        getline(testFile, line); 
-        b = stod(line.substr(4));
-        getline(testFile, line); 
-        c = stod(line.substr(4));
-        getline(testFile, line); 
+        std::string expected_output;
+        getline(testFile, line);
+        a = std::stod(line.substr(4));
+        getline(testFile, line);
+        b = std::stod(line.substr(4)); 
+        getline(testFile, line);
+        c = std::stod(line.substr(4));
+        getline(testFile, line);
         std::string output = task(a, b, c);
+
         getline(testFile, line); 
-        expected_output = std::string(line.substr(4));
+        expected_output = line.substr(4);
         if (output == expected_output) {
             std::cout << "----- TEST CASE " << i << " PASSED [OUTPUT MATCH] -----\n" <<
             "Input: a = " << a << ", b = " << b << ", c = " << c
