@@ -3,7 +3,7 @@
 #include <string>
 
 std::string task(int n){
-    int output;
+    int output = 0;
     for (int i = 1; i <= n; i++) {
         output += i;
     }
