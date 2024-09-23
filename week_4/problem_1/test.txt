@@ -1,0 +1,6 @@
+Input: 5
+Output: 15
+Input: 100
+Output: 5050
+Input: 973
+Output: 473851
