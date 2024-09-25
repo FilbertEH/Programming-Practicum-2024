@@ -1,0 +1,70 @@
+Input: 
+Name: Carlot Tint Danish
+Gross: 30000000
+Installment: 2000000
+Insurance: 500000
+Output:
+Payslip for Employee
+--------------------
+Name: Carlot Tint Danish
+Gross Salary: Rp30.000.000,00
+Tax (20%)   : Rp6.000.000,00
+Installment : Rp2.000.000,00
+Insurance   : Rp500.000,00
+Net Salary  : Rp21.500.000,00
+Input:
+Name: Tomat Nanders Wijarya
+Gross: 24000000
+Installment: 750000
+Insurance: 1000000
+Output:
+Payslip for Employee
+--------------------
+Name: Tomat Nanders Wijarya
+Gross Salary: Rp24.000.000,00
+Tax (20%)   : Rp4.800.000,00
+Installment : Rp750.000,00
+Insurance   : Rp1.000.000,00
+Net Salary  : Rp17.450.000,00
+Input:
+Name: Rain Eaten Hamill
+Gross: 7000000
+Installment: 350000
+Insurance: 200000
+Output:
+Payslip for Employee
+--------------------
+Name: Rain Eaten Hamill
+Gross Salary: Rp7.000.000,00
+Tax (20%)   : Rp1.400.000,00
+Installment : Rp350.000,00
+Insurance   : Rp200.000,00
+Net Salary  : Rp5.050.000,00
+Input:
+Name: Maimai Stevia Eatenull
+Gross: 15000000
+Installment: 1000000
+Insurance: 100000
+Output:
+Payslip for Employee
+--------------------
+Name: Maimai Stevia Eatenull
+Gross Salary: Rp15.000.000,00
+Tax (20%)   : Rp3.000.000,00
+Installment : Rp1.000.000,00
+Insurance   : Rp100.000,00
+Net Salary  : Rp10.900.000,00
+Input:
+Name: Sigma King Reat
+Gross: 2000000
+Installment: 300000
+Insurance: 145000
+Output:
+Payslip for Employee
+--------------------
+Name: Sigma King Reat
+Gross Salary: Rp2.000.000,00
+Tax (20%)   : Rp400.000,00
+Installment : Rp300.000,00
+Insurance   : Rp145.000,00
+Net Salary  : Rp1.155.000,00
