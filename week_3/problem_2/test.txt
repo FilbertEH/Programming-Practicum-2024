@@ -1,0 +1,10 @@
+Input: 17, 8, 23
+Output: 23
+Input: 42, 59, 31
+Output: 59
+Input: 5, 15, 9
+Output: 15
+Input: 76, 38, 91
+Output: 91
+Input: 20, 20, 33
+Output: 33
