@@ -32,7 +32,6 @@ int main(){
         return 1;
     }
 
-    int i = 1;
     while (getline(testFile, line)) {
         int input;
         std::vector<std::string> output = task();
@@ -60,7 +59,6 @@ int main(){
             std::cout << "----- TEST FAILED [IRREGULARITY FOUND] -----\n" << 
             "\n----------------\n" << genExpect << "---------------\n" << genOutput;
         }
-        i++;
     }
     return 0;
 }
