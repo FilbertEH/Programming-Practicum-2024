@@ -33,31 +33,34 @@ int main(){
     }
 
     while (getline(testFile, line)) {
-        int input;
         std::vector<std::string> output = task();
 
-        std::vector<std::string> expected_output;
+        std::vector<std::string> expected;
         for (int i = 1; i <= 100; i++) {
-            expected_output.push_back(line);
-            getline(testFile, line); 
+            if (getline(testFile, line))
+                expected.push_back(line);
         } 
 
         std::string genOutput = "Program Output:\n";
         for (int i = 0; i < output.size(); ++i) {
-            genOutput += output[i] + '\n';
+            genOutput += output[i];
+            if (i < output.size() - 1)
+                genOutput += ", ";
         }
 
         std::string genExpect = "Expected Output:\n";
-        for (int i = 0; i < expected_output.size(); ++i) {
-            genExpect += expected_output[i] + '\n';
+        for (int i = 0; i < expected.size(); ++i) {
+            genExpect += expected[i];
+            if (i < expected.size() - 1)
+                genExpect += ", ";
         }
 
-        if (output == expected_output) {
+        if (output == expected) {
             std::cout << "----- TEST PASSED [OUTPUT MATCH] -----\n" <<
-            "\n----------------\n" << genExpect << "---------------\n" << genOutput;
+            genExpect << "\n---------------\n" << genOutput << std::endl;
         } else {
             std::cout << "----- TEST FAILED [IRREGULARITY FOUND] -----\n" << 
-            "\n----------------\n" << genExpect << "---------------\n" << genOutput;
+            genExpect << "\n---------------\n" << genOutput << std::endl;
         }
     }
     return 0;
