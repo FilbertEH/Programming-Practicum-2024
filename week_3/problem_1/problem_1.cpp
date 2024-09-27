@@ -1,43 +1,65 @@
 #include <cmath>
 #include <iostream>
-using namespace std;
+#include <fstream>
+#include <string>
 
-double getInput(string prompt){
-    double value;
-    cout << prompt;
-    cin >> value;
-    return value;
-}
-
-int task(){
-    double a = getInput("[a]: ");
-    double b = getInput("[b]: ");
-    double c = getInput("[c]: ");
-    double discriminant = pow(b, 2) - ( 4 * a * c);
-    cout << "Discriminant = " << discriminant << endl;
-    if (discriminant > 0){
-        double x1 = (-b + sqrt(discriminant)) / (2 * a);
-        double x2 = (-b - sqrt(discriminant)) / (2 * a);
-        cout << "There are two distinct real roots, x1 = " << x1 << " and x2 = " << x2 << endl;
+std::string task(double a, double b, double c){
+    double x1, x2;
+    double discriminant = pow(b, 2) - (4 * a * c);
+    std::string x = "";
+    if (discriminant > 0){ 
+        x1 = (-b + std::sqrt(discriminant)) / (2 * a);
+        x2 = (-b - std::sqrt(discriminant)) / (2 * a);
+        x = std::to_string(x1) + ", " + std::to_string(x2);
     }
     else if (discriminant == 0){
-        double x = -b / (2 * a);
-        cout << "There is exactly one real root (the two roots are equal), x = " << x << endl;
+        x = std::to_string(-b / (2 * a));
     }
     else{
-        cout << "There are no real roots (the roots are imaginary).\n";
+        x = "complex";
     }
-    return 0;
+    return x;
 }
 
 int main(){
-    char again = 'y';
-    cout << "Solving a Quadratic Equation [ax^2 + bx + c = 0]\n" 
-    << "Input Values for:\n";
-    do{
-        task();
-        cout << "\nWould you like to start again? [y/n]: ";
-        cin >> again;
-    }while (again == 'y');
+    std::cout << "Solving a Quadratic Equation [ax^2 + bx + c = 0]" << std::endl;
+    std::ifstream testFile("test.txt");
+    std::string line;
+    
+    if (!testFile) {
+        std::cerr << "Error: Could not open test.txt" << std::endl;
+        return 1;
+    }
+
+    int i = 1;
+    while (getline(testFile, line)) {
+        double a, b, c;
+        std::string expected_output;
+        getline(testFile, line);
+        a = std::stod(line.substr(4));
+        getline(testFile, line);
+        b = std::stod(line.substr(4)); 
+        getline(testFile, line);
+        c = std::stod(line.substr(4));
+        getline(testFile, line);
+        std::string output = task(a, b, c);
+
+        getline(testFile, line); 
+        expected_output = line.substr(4);
+        if (output == expected_output) {
+            std::cout << "----- TEST CASE " << i << " PASSED [OUTPUT MATCH] -----\n" <<
+            "Input: a = " << a << ", b = " << b << ", c = " << c
+            << "\nExpected Output:\nx = " << expected_output 
+            << "\nProgram Output:\nx = " << output << std::endl;
+        } else {
+            std::cout << "----- TEST CASE " << i << " FAILED [IRREGULARITY FOUND] -----\n" <<
+            "Input: a = " << a << ", b = " << b << ", c = "  << c
+            << "\nExpected Output:\nx = " << expected_output
+            << "\nProgram Output:\nx = " << output << std::endl;
+        }
+        i++;
+    }
+
+    testFile.close();
     return 0;
 }
