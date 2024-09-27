@@ -30,24 +30,24 @@ int main(){
         }
         std::vector<std::string> output = task(input);
 
-        std::vector<std::string> expected_output;
+        std::vector<std::string> expected;
         getline(testFile, line); 
         for (int i = 1; i <= 10; i++) {
             getline(testFile, line); 
-            expected_output.push_back(line);
+            expected.push_back(line);
         } 
 
         std::string genOutput = "Program Output:\n";
-        for (int i = 0; i < output.size(); ++i) {
+        for (size_t i = 0; i < output.size(); ++i) {
             genOutput += output[i] + '\n';
         }
 
         std::string genExpect = "Expected Output:\n";
-        for (int i = 0; i < expected_output.size(); ++i) {
-            genExpect += expected_output[i] + '\n';
+        for (size_t i = 0; i < expected.size(); ++i) {
+            genExpect += expected[i] + '\n';
         }
 
-        if (output == expected_output) {
+        if (output == expected) {
             std::cout << "----- TEST CASE " << i << " PASSED [OUTPUT MATCH] -----\n" <<
             "Input: " << input << "\n----------------\n" << genExpect << "---------------\n" << genOutput;
         } else {

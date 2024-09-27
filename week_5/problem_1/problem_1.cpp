@@ -37,19 +37,19 @@ int main(){
 
         std::vector<std::string> expected;
         for (int i = 1; i <= 100; i++) {
-            if (getline(testFile, line))
-                expected.push_back(line);
+            expected.push_back(line);
+            getline(testFile, line);
         } 
 
         std::string genOutput = "Program Output:\n";
-        for (int i = 0; i < output.size(); ++i) {
+        for (size_t i = 0; i < output.size(); ++i) {
             genOutput += output[i];
             if (i < output.size() - 1)
                 genOutput += ", ";
         }
 
         std::string genExpect = "Expected Output:\n";
-        for (int i = 0; i < expected.size(); ++i) {
+        for (size_t i = 0; i < expected.size(); ++i) {
             genExpect += expected[i];
             if (i < expected.size() - 1)
                 genExpect += ", ";

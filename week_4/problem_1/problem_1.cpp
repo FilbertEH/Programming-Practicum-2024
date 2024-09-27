@@ -27,10 +27,10 @@ int main(){
         std::string output = task(input);
         if (output == expected_output) {
             std::cout << "----- TEST CASE " << i << " PASSED [OUTPUT MATCH] -----\n" <<
-            "Input: " << input << "\nExpected Output: " << expected_output << "\nProgram Output: " << output << std::endl;
+            "Input: " << input << "\nExpected Output: " << expected_output << "\nProgram Output : " << output << std::endl;
         } else {
             std::cout << "----- TEST CASE " << i << " FAILED [IRREGULARITY FOUND] -----\n" << 
-            "Input: " << input << "\nExpected Output: " << expected_output << "\nProgram Output: " << output << std::endl;
+            "Input: " << input << "\nExpected Output: " << expected_output << "\nProgram Output : " << output << std::endl;
         }
         i++;
     }
