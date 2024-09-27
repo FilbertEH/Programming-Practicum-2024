@@ -1,1 +1,36 @@
-.
+Input: 
+a = 1
+b = -5
+c = 6
+Output:
+x = 3.000000, 2.000000
+Input:
+a = 1
+b = -7
+c = 10
+Output:
+x = 5.000000, 2.000000 
+Input:
+a = 1
+b = -4
+c = 4
+Output:
+x = 2.000000
+Input:
+a = 4
+b = 12
+c = 9
+Output:
+x = -1.500000
+Input:
+a = 1
+b = 2
+c = 7
+Output:
+x = complex
+Input:
+a = 1
+b = 5
+c = 13
+Output:
+x = complex
