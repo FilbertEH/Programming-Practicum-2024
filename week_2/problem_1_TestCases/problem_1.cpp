@@ -6,7 +6,7 @@
 std::string format(long value) {
     std::string original = std::to_string(value);
     std::string format;
-    for (int i = 0; i < original.size(); i++) {
+    for (size_t i = 0; i < original.size(); i++) {
         format += original[i];
         if (i != original.size() - 1 && (original.size() - i - 1) % 3 == 0) {
             format += '.';
@@ -62,12 +62,12 @@ int main(){
         }
 
         std::string genOutput = "Program Output:\n\n";
-        for (int i = 0; i < output.size(); ++i) {
+        for (size_t i = 0; i < output.size(); ++i) {
             genOutput += output[i] + '\n';
         }
 
         std::string genExpect = "Expected Output:\n\n";
-        for (int i = 0; i < expected_output.size(); ++i) {
+        for (size_t i = 0; i < expected_output.size(); ++i) {
             genExpect += expected_output[i] + '\n';
         }
 
