@@ -1,36 +1,30 @@
 Input: 
-a = 1
-b = -5
-c = 6
-Output:
-x = 3.000000, 2.000000
-Input:
-a = 1
-b = -7
-c = 10
-Output:
-x = 5.000000, 2.000000 
-Input:
-a = 1
-b = -4
-c = 4
-Output:
+a = 1, b = -5, c = 6
+Output: 
+Discriminant > 0, roots are real and distinct.
+x1 = 3.000000, x2 = 2.000000
+Input: 
+a = 1, b = -7, c = 10
+Output: 
+Discriminant > 0, roots are real and distinct.
+x1 = 5.000000, x2 = 2.000000
+Input: 
+a = 1, b = -4, c = 4
+Output: 
+Discriminant = 0, roots are real and equal.
 x = 2.000000
-Input:
-a = 4
-b = 12
-c = 9
+Input: 
+a = 4, b = 12, c = 9
 Output:
+Discriminant = 0, roots are real and equal.
 x = -1.500000
-Input:
-a = 1
-b = 2
-c = 7
-Output:
-x = complex
-Input:
-a = 1
-b = 5
-c = 13
-Output:
-x = complex
+Input: 
+a = 1, b = 2, c = 7
+Output: 
+Discriminant < 0, roots are imaginary
+x1 = imaginary, x2 = imaginary.
+Input: 
+a = 1, b = 5, c = 13
+Output: 
+Discriminant < 0, roots are imaginary
+x1 = imaginary, x2 = imaginary.

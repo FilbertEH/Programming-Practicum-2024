@@ -1,6 +1,7 @@
 #include <cmath>
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 
 std::string task(double a, double b, double c){
@@ -34,22 +35,34 @@ int main(){
     int i = 1;
     while (getline(testFile, line)) {
         double a, b, c;
+        getline(testFile, line);
+        std::stringstream ss(line.substr(line.find(":") + 1));
+        std::string temp;
+        while (std::getline(ss, temp, ',')) {
+            std::istringstream inss(temp);
+            char variable;
+            double value;
+            inss >> variable >> temp >> value;
+            switch (variable) {
+                case 'a': a = value; break;
+                case 'b': b = value; break;
+                case 'c': c = value; break;
+            }
+        }
+        std::string output = task(a, b, c);
+
         std::string expected_output;
         getline(testFile, line);
-        a = std::stod(line.substr(4));
-        getline(testFile, line);
-        b = std::stod(line.substr(4)); 
-        getline(testFile, line);
-        c = std::stod(line.substr(4));
-        getline(testFile, line);
-        std::string output = task(a, b, c);
+
+
+        expected_output = line.substr((line.find("=") + 1));
 
         getline(testFile, line); 
         expected_output = line.substr(4);
         if (output == expected_output) {
             std::cout << "----- TEST CASE " << i << " PASSED [OUTPUT MATCH] -----\n" <<
             "Input: a = " << a << ", b = " << b << ", c = " << c
-            << "\nExpected Output:\nx = " << expected_output 
+            << "\nExpected Output:\nx = " << expected_output
             << "\nProgram Output:\nx = " << output << std::endl;
         } else {
             std::cout << "----- TEST CASE " << i << " FAILED [IRREGULARITY FOUND] -----\n" <<
@@ -58,7 +71,7 @@ int main(){
             << "\nProgram Output:\nx = " << output << std::endl;
         }
         i++;
-    }
+    }   
 
     testFile.close();
     return 0;
