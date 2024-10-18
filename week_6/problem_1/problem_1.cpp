@@ -79,7 +79,5 @@ int main() {
                   << "  Average Score = " << expectedAvg << "\n"
                   << "[Test Case " << i + 1 << ": " << (students[i].testPassed ? "Passed]" : "Failed]") << "\n\n";
     }
-
-    std::cout << "-- Overall Test Result: " << (allTestsPassed ? "Passed --" : "Failed --") << "\n";
     return 0;
 }
