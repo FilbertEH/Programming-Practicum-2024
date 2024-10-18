@@ -38,7 +38,7 @@ int main() {
     students.reserve(maxStudents);
 
     std::getline(testFile, line);
-    
+
     while (std::getline(testFile, line) && line != "Output:") {
         std::istringstream iss(line);
         studentData student;
@@ -77,5 +77,6 @@ int main() {
                   << "  Average Score = " << expectedAvg << "\n"
                   << "[Test Case " << i + 1 << ": " << (students[i].testPassed ? "Passed]" : "Failed]") << "\n\n";
     }
+    testFile.close();
     return 0;
 }
