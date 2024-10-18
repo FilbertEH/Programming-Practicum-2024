@@ -1,0 +1,13 @@
+Students: 5
+Input:
+NIM: A , UTS: 85 , UAS: 90
+NIM: B , UTS: 75 , UAS: 80
+NIM: C , UTS: 67 , UAS: 89
+NIM: D , UTS: 56 , UAS: 43
+NIM: E , UTS: 23 , UAS: 100
+Output:
+NIM: A , Average: 87
+NIM: B , Average: 77
+NIM: C , Average: 78
+NIM: D , Average: 49
+NIM: E , Average: 61
