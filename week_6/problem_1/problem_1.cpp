@@ -12,25 +12,34 @@ struct studentData {
 
 int main() {
     std::cout << "Student Exam Data Averager\n";
+    const int maxStudents = 50; 
     std::string filename = "test.txt";
     std::ifstream testFile(filename);
+
     if (!testFile) {
         std::cerr << "Error: Could not open " << filename << "\n";
-        exit(1);
+        return 1;
     }
 
-    std::string label;
+    std::string label, line;
     char comma;
-    std::string line;
-    
+
     std::getline(testFile, line);
     std::istringstream iss(line);
     int totalStudents;
     iss >> label >> totalStudents;
 
+    if (totalStudents > maxStudents) {
+        std::cerr << "Error: The number of students exceeds the maximum limit (" << maxStudents << ").\n";
+        return 1;
+    }
+
     std::vector<studentData> students;
+    students.reserve(maxStudents);
+
     std::getline(testFile, line);
 
+    // Read student data
     while (std::getline(testFile, line) && line != "Output:") {
         std::istringstream iss(line);
         studentData student;
@@ -45,6 +54,7 @@ int main() {
     std::cout << "\nNumber of Students: " << students.size() << "\n\n";
     bool allTestsPassed = true;
 
+    // Process each student's expected output
     for (size_t i = 0; i < students.size(); ++i) {
         std::getline(testFile, line);
         std::istringstream iss(line);
@@ -69,5 +79,7 @@ int main() {
                   << "  Average Score = " << expectedAvg << "\n"
                   << "[Test Case " << i + 1 << ": " << (students[i].testPassed ? "Passed]" : "Failed]") << "\n\n";
     }
+
+    std::cout << "-- Overall Test Result: " << (allTestsPassed ? "Passed --" : "Failed --") << "\n";
     return 0;
 }
