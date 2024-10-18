@@ -38,8 +38,7 @@ int main() {
     students.reserve(maxStudents);
 
     std::getline(testFile, line);
-
-    // Read student data
+    
     while (std::getline(testFile, line) && line != "Output:") {
         std::istringstream iss(line);
         studentData student;
@@ -54,7 +53,6 @@ int main() {
     std::cout << "\nNumber of Students: " << students.size() << "\n\n";
     bool allTestsPassed = true;
 
-    // Process each student's expected output
     for (size_t i = 0; i < students.size(); ++i) {
         std::getline(testFile, line);
         std::istringstream iss(line);
