@@ -1,0 +1,10 @@
+Input: 0
+Output: 1
+Input: 20
+Output: 2432902008176640000
+Input: 5
+Output: 120
+Input: 11
+Output: 39916800
+Input: 7
+Output: 5040

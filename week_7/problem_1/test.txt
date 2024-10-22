@@ -1,0 +1,10 @@
+Input: 15 + 22
+Output: 37
+Input: 100 - 96
+Output: 4
+Input: 75 + 19
+Output: 94
+Input: 18 - 31
+Output: -13
+Input: 36 - 53
+Output: -17

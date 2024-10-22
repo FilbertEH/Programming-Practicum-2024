@@ -1,0 +1,10 @@
+Input: 48, 18
+Output: 6
+Input: 100, 75
+Output: 25
+Input: 17, 23
+Output: 1
+Input: 144, 36
+Output: 36
+Input: 225, 125
+Output: 25

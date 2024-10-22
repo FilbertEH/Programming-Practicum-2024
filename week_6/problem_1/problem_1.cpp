@@ -17,28 +17,21 @@ int main() {
     std::ifstream testFile(filename);
 
     if (!testFile) {
-        std::cerr << "Error: Could not open " << filename << "\n";
+        std::cerr << "Error: Could not open test.txt" << std::endl;
         return 1;
     }
-
     std::string label, line;
+    std::vector<studentData> students;
     char comma;
-
     std::getline(testFile, line);
     std::istringstream iss(line);
     int totalStudents;
     iss >> label >> totalStudents;
-
     if (totalStudents > maxStudents) {
         std::cerr << "Error: The number of students exceeds the maximum limit (" << maxStudents << ").\n";
         return 1;
     }
-
-    std::vector<studentData> students;
-    students.reserve(maxStudents);
-
     std::getline(testFile, line);
-
     while (std::getline(testFile, line) && line != "Output:") {
         std::istringstream iss(line);
         studentData student;
@@ -49,21 +42,15 @@ int main() {
         student.avg = (student.uts + student.uas) / 2;
         students.push_back(student);
     }
-
     std::cout << "\nNumber of Students: " << students.size() << "\n\n";
-    bool allTestsPassed = true;
 
     for (size_t i = 0; i < students.size(); ++i) {
         std::getline(testFile, line);
         std::istringstream iss(line);
-
         std::string expectedNIM;
         int expectedAvg;
         iss >> label >> expectedNIM >> comma >> label >> expectedAvg;
-
         students[i].testPassed = (expectedAvg == students[i].avg);
-        allTestsPassed &= students[i].testPassed;
-
         std::cout << "----- Student " << i + 1 << " -----\n"
                   << "Input:\n"
                   << "  NIM = " << students[i].nim << "\n"
