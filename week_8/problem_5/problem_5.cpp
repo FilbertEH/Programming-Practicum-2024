@@ -4,7 +4,7 @@
 #include <vector>
 
 struct Student {
-    std::string id;
+    std::string nisn;
     std::string name;
     int score;
 };
@@ -24,7 +24,7 @@ int main() {
     while (std::getline(file, line) && line != "Output:") {
         if (!line.empty()) {
             Student s;
-            s.id = line.substr(0, 10);
+            s.nisn = line.substr(0, 10);
             size_t lastSpace = line.rfind(' ');
             s.score = std::stoi(line.substr(lastSpace + 1));
             s.name = line.substr(11, lastSpace - 11);
@@ -49,7 +49,7 @@ int main() {
     std::cout << "\nProgram Output:\n";
     bool passed = true;
     for (size_t i = 0; i < students.size(); i++) {
-        std::string output = students[i].id + " " + 
+        std::string output = students[i].nisn + " " + 
                            students[i].name + " " + 
                            std::to_string(students[i].score);
         std::cout << output << "\n";
